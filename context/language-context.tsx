@@ -26,6 +26,10 @@ const translations: Record<Language, Translations> = {
       login: "Login",
       register: "Register",
       logout: "Logout",
+      profile: "Profile",
+      noAccount: "Don't have an account?",
+      haveAccount: "Already have an account?",
+      createAccount: "Create an account",
     },
   },
   ar: {
@@ -48,8 +52,12 @@ const translations: Record<Language, Translations> = {
     },
     account: {
       login: "تسجيل الدخول",
-      register: "تسجيل",
+      register: "إنشاء حساب",
       logout: "تسجيل الخروج",
+      profile: "الملف الشخصي",
+      noAccount: "ليس لديك حساب؟",
+      haveAccount: "لديك حساب بالفعل؟",
+      createAccount: "إنشاء حساب جديد",
     },
   },
 };

@@ -1,27 +1,30 @@
-export type Language = 'ar' | 'en'
+export type Language = "ar" | "en";
 
 export interface Translations {
   nav: {
-    home?: string
-    products?: string
-    offers?: string
-    contact?: string
-  }
+    home?: string;
+    products?: string;
+    offers?: string;
+    contact?: string;
+  };
   hero: {
-    title?: string
-    subtitle?: string
-    cta?: string
-  }
+    title?: string;
+    subtitle?: string;
+    cta?: string;
+  };
   sections: {
-    categories?: string
-    featured?: string
-    whyChooseUs?: string
-    reviews?: string
-  }
+    categories?: string;
+    featured?: string;
+    whyChooseUs?: string;
+    reviews?: string;
+  };
   account: {
-    login?: string
-    register?: string
-    logout?: string
-  }
+    login?: string;
+    register?: string;
+    logout?: string;
+    profile?: string;
+    noAccount?: string;
+    haveAccount?: string;
+    createAccount?: string;
+  };
 }
-
