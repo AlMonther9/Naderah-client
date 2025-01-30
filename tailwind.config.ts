@@ -13,18 +13,16 @@ const config: Config = {
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
-			// Primary Colors
-			pri: {
-				blue: "#11238C", // Deep Blue
-				light: "#B3DAF2", // Light Blue
-				beige: "#F8F3F0", // Light Beige
-			  },
-			  // Secondary Colors
-			  sec: {
-				pink: "#F76B84",
-				lightPink: "#F8CFCD",
-				gold: "#D4AF37",
-			  },
+  			pri: {
+  				blue: '#11238C',
+  				light: '#B3DAF2',
+  				beige: '#F8F3F0'
+  			},
+  			sec: {
+  				pink: '#F76B84',
+  				lightPink: '#F8CFCD',
+  				gold: '#D4AF37'
+  			},
   			card: {
   				DEFAULT: 'hsl(var(--card))',
   				foreground: 'hsl(var(--card-foreground))'

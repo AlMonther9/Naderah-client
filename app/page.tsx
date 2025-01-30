@@ -19,11 +19,6 @@ export default function Home() {
           <WhyChooseUs />
           <CustomerReviews />
         </main>
-        <footer className="bg-[#11238C] text-white py-8">
-          <div className="container px-4 mx-auto text-center">
-            <p>&copy; 2024 نَضِرَة. جميع الحقوق محفوظة.</p>
-          </div>
-        </footer>
       </div>
     </LanguageProvider>
   )

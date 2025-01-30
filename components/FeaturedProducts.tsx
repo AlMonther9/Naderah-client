@@ -19,7 +19,7 @@ export function FeaturedProducts() {
                 <CardTitle>{product.name}</CardTitle>
               </CardHeader>
               <CardContent>
-                <img src={product.image || "/placeholder.svg"} alt={product.name} className="w-full h-48 object-cover rounded-md" />
+                <img src={product.image} alt={product.name} className="w-full h-48 object-cover rounded-md" />
               </CardContent>
               <CardFooter className="flex justify-between">
                 <span className="text-lg font-bold">${product.price}</span>
