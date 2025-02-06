@@ -2,11 +2,11 @@
 
 import { LanguageProvider } from '@/context/language-context'
 import { Navbar } from '@/components/Navbar'
-import { HeroSection } from '@/components/HeroSection'
+import HeroSection from '@/components/heroSection/HeroSection'
 import { CategoriesSection } from '@/components/CategoriesSection'
 import { FeaturedProducts } from '@/components/FeaturedProducts'
-import { WhyChooseUs } from '@/components/WhyChooseUs'
-import { CustomerReviews } from '@/components/CustomerReviews'
+import WhyChooseUs from '@/components/WhyChooseUs'
+// import { CustomerReviews } from '@/components/CustomerReviews'
 
 export default function Home() {
   return (
@@ -17,8 +17,8 @@ export default function Home() {
           <CategoriesSection />
           <FeaturedProducts />
           <WhyChooseUs />
-          <CustomerReviews />
-        </main>
+{/*           <CustomerReviews />
+ */}        </main>
       </div>
     </LanguageProvider>
   )

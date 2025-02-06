@@ -14,14 +14,28 @@ const config: Config = {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			pri: {
-  				blue: '#11238C',
-  				light: '#B3DAF2',
-  				beige: '#F8F3F0'
+				900: '#F76983',
+				800: '#FA7C90',
+				700: '#FD8D9D',
+				600: '#FF9EAA',
+				500: '#FFAFB8',
+				400: '#FFBFC6',
+				300: '#FFCFD4',
+				200: '#FFDFE2',
+				100: '#FFEFF0',
+				50: '#FFF1F2'
   			},
   			sec: {
-  				pink: '#F76B84',
-  				lightPink: '#F8CFCD',
-  				gold: '#D4AF37'
+				900: '#003F6B',
+				800: '#00528C',
+				700: '#006AB5',
+				600: '#0088E8',
+				500: '#0095FF',
+				400: '#0095FF',
+				300: '#54B8FF',
+				200: '#8ACEFF',
+				100: '#B0DEFF',
+				50: '#E6F4FF'
   			},
   			card: {
   				DEFAULT: 'hsl(var(--card))',

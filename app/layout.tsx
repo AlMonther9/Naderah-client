@@ -5,6 +5,7 @@ import { Navbar } from "@/components/Navbar";
 import { LanguageProvider } from "@/context/language-context";
 import NextAuthProvider from "./providers/NextAuthProvider";
 import { Footer } from "@/components/Footer";
+import { ToastProvider } from "./providers/ToastProvider";
 
 export default function RootLayout({
   children,
@@ -14,6 +15,7 @@ export default function RootLayout({
   return (
     <html lang="ar" dir="rtl">
       <body>
+        <ToastProvider />
         <LanguageProvider>
           <NextAuthProvider>
             <Navbar />

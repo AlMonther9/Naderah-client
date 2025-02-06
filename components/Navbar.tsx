@@ -12,7 +12,6 @@ import {
 import { useLanguage } from "@/context/language-context";
 import { useSession, signOut } from "next-auth/react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Skeleton } from "@/components/ui/skeleton";
 import Logo from "./Logo";
 
 export function Navbar() {
@@ -192,12 +191,12 @@ export function Navbar() {
                   ) : (
                     <>
                       <DropdownMenuItem asChild>
-                        <Link href="/auth/login" className="cursor-pointer">
+                        <Link href="/login" className="cursor-pointer">
                           {t.account.login}
                         </Link>
                       </DropdownMenuItem>
                       <DropdownMenuItem asChild>
-                        <Link href="/auth/register" className="cursor-pointer">
+                        <Link href="/register" className="cursor-pointer">
                           {t.account.register}
                         </Link>
                       </DropdownMenuItem>
@@ -224,7 +223,7 @@ export function Navbar() {
           ))}
         </div>
       </div>
-      <div className="border-b-2 border-#4E031154 mx-24"></div>
+      <div className="border-b-2 border-[#4E031154] mx-24"></div>
     </nav>
   );
 }
