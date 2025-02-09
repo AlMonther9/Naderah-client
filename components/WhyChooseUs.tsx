@@ -25,32 +25,20 @@ const WhyChooseUs = () => {
 
   return (
     <div className="w-full bg-[#FFF7F5] py-16 lg:py-24">
-      <h2 className="text-3xl font-bold text-gray-900 pr-64 pb-12">
+      {/* Heading: centered on mobile, right-aligned on large screens */}
+      <h2 className="text-3xl font-bold text-gray-900 pb-12 text-center lg:text-right lg:pr-64">
         لماذا تختار نَضِرَةْ؟
       </h2>
 
-      <div className="container mx-auto px-4 flex flex-col lg:flex-row-reverse gap-12 items-center">
-        {/* Features List */}
-        <div className="lg:w-1/2 space-y-8">
-          {features.map((feature) => (
-            <div key={feature.id} className="space-y-3">
-              <div className="flex items-center gap-4">
-                <span className="text-xl font-semibold text-gray-900">
-                  {feature.id}
-                </span>
-                <h3 className="text-xl font-semibold text-gray-900">
-                  {feature.title}
-                </h3>
-              </div>
-              <li className="text-lg text-gray-700 w-4/5">{feature.description}</li>
-            </div>
-          ))}
-        </div>
-
-        {/* Image Container */}
+      {/* Container:
+            - On mobile: content stacks in DOM order.
+            - On large screens: lg:flex-row-reverse switches the order.
+      */}
+      <div className="w-full max-w-screen-xl mx-auto flex flex-col lg:flex-row-reverse gap-12 items-center">
+        {/* Image Container – placed first in the DOM for mobile */}
         <div className="lg:w-1/2 flex justify-center relative">
           {/* Background Image */}
-          <div className="relative w-[450px] h-[450px] lg:w-[600px] lg:h-[600px]">
+          <div className="relative w-56 h-56 sm:w-64 sm:h-64 lg:w-[600px] lg:h-[600px]">
             <Image
               src="/bg-WhyChooseUs.png"
               alt="Background"
@@ -60,13 +48,40 @@ const WhyChooseUs = () => {
           </div>
 
           {/* Foreground Image */}
-          <div className="absolute w-[250px] h-[250px] lg:w-[300px] lg:h-[300px] mt-28">
+          <div className="absolute w-40 h-40 sm:w-48 sm:h-48 lg:w-[300px] lg:h-[300px] mt-12 sm:mt-16">
             <Image
               src="/WhyChooseUs.jpg"
               alt="Nadra Candle"
               layout="fill"
               className="object-cover rounded-lg shadow-xl"
             />
+          </div>
+        </div>
+
+        {/* Features List */}
+        <div className="lg:w-1/2 text-center lg:text-right">
+          <div className="space-y-8">
+            {features.map((feature) => (
+              <div key={feature.id} className="space-y-3">
+                {/* Title row:
+                    Using flex-row-reverse so that in RTL the ID appears on the right */}
+                <div className="flex items-center gap-3 justify-end flex-row-reverse">
+                  <h3 className="text-xl font-semibold text-gray-900">
+                    {feature.title}
+                  </h3>
+                  <span className="text-xl font-semibold text-gray-900 pr-6">
+                    {feature.id}
+                  </span>
+                </div>
+                {/* Description with bullet:
+                    Using pr-6 so that the bullet is indented properly in RTL */}
+                <ul className="list-disc pr-6">
+                  <li className="text-lg text-gray-700">
+                    {feature.description}
+                  </li>
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
       </div>

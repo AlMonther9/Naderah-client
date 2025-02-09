@@ -25,7 +25,7 @@ const HeroSection = () => {
   return (
     <div className="w-full flex justify-center py-3 md:py-6 lg:py-6 px-4 md:px-8 lg:px-16">
       <ImagesSlider
-        className="h-screen w-full max-w-screen-xl" // Control max width
+        className="h-[80vh] w-full max-w-screen-xl" // Control max width
         images={images}
       >
         <HeroContent
