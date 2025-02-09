@@ -40,7 +40,7 @@ const WhyChooseUs = () => {
           {/* Background Image */}
           <div className="relative w-56 h-56 sm:w-64 sm:h-64 lg:w-[600px] lg:h-[600px]">
             <Image
-              src="/bg-WhyChooseUs.png"
+              src="/bg-why-choose-us.png"
               alt="Background"
               layout="fill"
               className="object-contain opacity-20"
@@ -50,7 +50,7 @@ const WhyChooseUs = () => {
           {/* Foreground Image */}
           <div className="absolute w-40 h-40 sm:w-48 sm:h-48 lg:w-[300px] lg:h-[300px] mt-12 sm:mt-16">
             <Image
-              src="/WhyChooseUs.jpg"
+              src="/why-choose-us.jpg"
               alt="Nadra Candle"
               layout="fill"
               className="object-cover rounded-lg shadow-xl"

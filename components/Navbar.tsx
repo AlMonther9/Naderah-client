@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -21,10 +23,15 @@ export function Navbar() {
   const pathname = usePathname();
   const { data: session, status } = useSession();
 
-  const activeClass = (path: string) =>
-    pathname === path
-      ? "underline underline-offset-[6px] rounded text-pri-blue font-bold"
-      : "border-transparent text-pri hover:text-pri-light hover:border-pri-light";
+  const activeClass = (path: string) => {
+    const isActive = pathname === path;
+
+    return `relative rounded font-bold transition-all duration-300
+      ${isActive ? "text-sec-900" : ""}
+      before:absolute before:bottom-[-6px] before:left-1/2 before:-translate-x-1/2
+      before:w-0 before:h-[2px] before:bg-sec-900 before:transition-all before:duration-300
+      ${isActive ? "before:w-3/5" : "hover:before:w-3/5"}`;
+  };
 
   useEffect(() => {
     const fetchCart = async () => {
@@ -74,7 +81,7 @@ export function Navbar() {
                 <Link
                   key={path}
                   href={path}
-                  className={`px-3 py-2 font-serif text-md transition-colors ${activeClass(
+                  className={`px-3 py-1 font-serif text-md transition-colors ${activeClass(
                     path
                   )}`}
                 >
