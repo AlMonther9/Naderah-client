@@ -33,33 +33,33 @@ export function Navbar() {
       ${isActive ? "before:w-3/5" : "hover:before:w-3/5"}`;
   };
 
-  useEffect(() => {
-    const fetchCart = async () => {
-      try {
-        setCartLoading(true);
-        if (status === "authenticated" && session?.user?.accessToken) {
-          // const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/cart`, {
-          //   headers: {
-          //     Authorization: `Bearer ${session.user.accessToken}`
-          //   }
-          // });
-          // const data = await response.json();
-          // setCartItems(data.count);
-        }
-      } catch (error) {
-        console.error("Failed to fetch cart:", error);
-      } finally {
-        setCartLoading(false);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchCart = async () => {
+  //     try {
+  //       setCartLoading(true);
+  //       if (status === "authenticated" && session?.user?.accessToken) {
+  //         // const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/cart`, {
+  //         //   headers: {
+  //         //     Authorization: `Bearer ${session.user.accessToken}`
+  //         //   }
+  //         // });
+  //         // const data = await response.json();
+  //         // setCartItems(data.count);
+  //       }
+  //     } catch (error) {
+  //       console.error("Failed to fetch cart:", error);
+  //     } finally {
+  //       setCartLoading(false);
+  //     }
+  //   };
 
-    if (status === "authenticated") {
-      fetchCart();
-    } else {
-      setCartItems(0);
-      setCartLoading(false);
-    }
-  }, [status, session]);
+  //   if (status === "authenticated") {
+  //     fetchCart();
+  //   } else {
+  //     setCartItems(0);
+  //     setCartLoading(false);
+  //   }
+  // }, [status, session]);
 
   const getUserInitials = () => {
     if (!session?.user) return "";

@@ -1,10 +1,8 @@
-'use client'
 
 import { LanguageProvider } from '@/context/language-context'
-import { Navbar } from '@/components/Navbar'
 import HeroSection from '@/components/heroSection/HeroSection'
 import { CategoriesSection } from '@/components/CategoriesSection'
-import { FeaturedProducts } from '@/components/FeaturedProducts'
+import FeaturedProducts from '@/components/FeaturedProducts'
 import WhyChooseUs from '@/components/WhyChooseUs'
 // import { CustomerReviews } from '@/components/CustomerReviews'
 
