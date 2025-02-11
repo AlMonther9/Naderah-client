@@ -1,127 +1,98 @@
-/* import React, { useState, useRef, memo } from "react";
-import { Star, ChevronLeft, ChevronRight } from "lucide-react";
+"use client";
+
+import { useSlider } from "@/hooks/useSlider";
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 
 const reviews = [
   {
-    text: "استخدمت منتجات العناية بالبشرة من هذا الموقع واندهشت من كم كانت مؤثرة في بشرتي. كل شيء أصلي وسهل الاستخدام. شكراً لكم!",
+    text: "استخدمت منتجات العناية بالبشرة من هذا الموقع ولاحظت فرقًا كبيرًا في بشرتي خلال أسابيع قليلة. العبوّة أيضًا أنيقة جدًا وسهلة الاستخدام. شكرًا لكم!",
     author: "مريم احمد",
     rating: 5,
   },
   {
-    text: "استخدمت منتجات العناية بالبشرة من هذا الموقع واندهشت من كم كانت مؤثرة في بشرتي. كل شيء أصلي وسهل الاستخدام. شكراً لكم!",
+    text: "استخدمت منتجات العناية بالبشرة من هذا الموقع ولاحظت فرقًا كبيرًا في بشرتي خلال أسابيع قليلة. العبوّة أيضًا أنيقة جدًا وسهلة الاستخدام. شكرًا لكم!",
     author: "مريم احمد",
     rating: 5,
   },
   {
-    text: "استخدمت منتجات العناية بالبشرة من هذا الموقع واندهشت من كم كانت مؤثرة في بشرتي. كل شيء أصلي وسهل الاستخدام. شكراً لكم!",
+    text: "استخدمت منتجات العناية بالبشرة من هذا الموقع ولاحظت فرقًا كبيرًا في بشرتي خلال أسابيع قليلة. العبوّة أيضًا أنيقة جدًا وسهلة الاستخدام. شكرًا لكم!",
     author: "مريم احمد",
     rating: 5,
   },
 ];
 
-interface ReviewCardProps {
-  review: {
-    text: string;
-    author: string;
-    rating: number;
-  };
-  isActive: boolean;
-}
+export function CustomerReviews() {
 
-const ReviewCard = memo(({ review, isActive }: ReviewCardProps) => (
-  <Card
-    className={`min-w-[280px] sm:min-w-[300px] md:min-w-[350px] snap-center ${isActive ? "scale-105" : ""}`}
-  >
-    <CardContent className="p-4 lg:p-6 h-full flex flex-col justify-between">
-      <p className="text-gray-600 mb-4 text-right text-sm lg:text-base">
-        {review.text}
-      </p>
-      <div className="flex items-center justify-between">
-        <div className="flex gap-1">
-          {[...Array(review.rating)].map((_, i) => (
-            <Star
-              key={i}
-              className="h-4 w-4 lg:h-5 lg:w-5 text-yellow-400 fill-current"
-            />
-          ))}
-        </div>
-        <span className="font-semibold text-sm lg:text-base">
-          {review.author}
-        </span>
-      </div>
-    </CardContent>
-  </Card>
-));
-
-interface CustomerReviewsProps {
-  reviews: {
-    text: string;
-    author: string;
-    rating: number;
-  }[];
-}
-
-export const CustomerReviews = memo(({ reviews }: CustomerReviewsProps) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const sliderRef = useRef<HTMLDivElement>(null);
-
-  const scrollLeft = () => {
-    if (sliderRef.current) {
-      sliderRef.current.scrollBy({
-        left: -sliderRef.current.clientWidth,
-        behavior: "smooth",
-      });
-      setCurrentIndex((prevIndex) => prevIndex - 1);
-    }
-  };
-
-  const scrollRight = () => {
-    if (sliderRef.current) {
-      sliderRef.current.scrollBy({
-        left: sliderRef.current.clientWidth,
-        behavior: "smooth",
-      });
-      setCurrentIndex((prevIndex) => prevIndex + 1);
-    }
-  };
+  const { currentIndex, sliderRef, scrollLeft, scrollRight } =
+    useSlider(reviews);
 
   return (
-    <div className="container mx-auto px-4 py-8 lg:py-12">
-      <h2 className="text-2xl lg:text-3xl font-bold text-center mb-6 lg:mb-8 text-pri-blue">
+    <div className="container mx-auto px-6 py-8  lg:py-12 text-center">
+      {/* Section Title */}
+      <h2 className="text-2xl lg:text-3xl font-bold text-[#171721] mb-6">
         آراء عملائنا
       </h2>
+
+      {/* Reviews Slider */}
       <div className="relative">
         <div
           ref={sliderRef}
-          className="flex gap-4 lg:gap-6 overflow-x-auto pb-6 snap-x scroll-smooth"
+          className="flex gap-4 overflow-x-auto snap-x scroll-smooth pb-6"
         >
           {reviews.map((review, index) => (
-            <ReviewCard
+            <Card
               key={index}
-              review={review}
-              isActive={index === currentIndex}
-            />
+              className="min-w-[280px] sm:min-w-[320px] md:min-w-[360px] bg-[#FCF9F9] snap-center border-[#171721] rounded-lg shadow-sm"
+            >
+              <CardContent className="p-5 flex flex-col gap-4 text-right">
+                {/* Review Text */}
+                <p className="text-gray-600">{review.text}</p>
+
+                {/* Separator */}
+                <div className="border-t border-gray-300"></div>
+
+                {/* Footer: Stars & Author */}
+                <div className="flex justify-between items-center">
+                  {/* Author Name */}
+                  <span className="font-semibold text-sm">{review.author}</span>
+                  {/* Star Ratings */}
+                  <div className="flex gap-1">
+                    {[...Array(review.rating)].map((_, i) => (
+                      <Star
+                        key={i}
+                        className="h-5 w-5 text-[#FF7894] fill-current"
+                      />
+                    ))}
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           ))}
         </div>
-        {currentIndex > 0 && (
-          <button
-            className="hidden lg:block absolute left-0 top-1/2 -translate-y-1/2 bg-white rounded-full p-2 shadow-lg"
-            onClick={scrollLeft}
-          >
-            <ChevronLeft className="h-6 w-6 text-pri-blue" />
-          </button>
-        )}
-        {currentIndex < reviews.length - 1 && (
-          <button
-            className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 bg-white rounded-full p-2 shadow-lg"
+
+        {/* Navigation Buttons */}
+        <div className="flex justify-center gap-3 mt-6">
+          <Button
+            variant="outline"
+            className="w-8 h-8 rounded-md shadow-md border bg-[#FF7894] hover:bg-[#FF5C78] text-white"
             onClick={scrollRight}
+            disabled={currentIndex === reviews.length - 1}
           >
-            <ChevronRight className="h-6 w-6 text-pri-blue" />
-          </button>
-        )}
+            <ChevronRight className="w-5 h-5" />
+          </Button>
+
+          <Button
+            variant="outline"
+            className="w-8 h-8 rounded-md shadow-md border bg-[#FF7894] hover:bg-[#FF5C78] text-white"
+            onClick={scrollLeft}
+            disabled={currentIndex === 0}
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </Button>
+        </div>
       </div>
     </div>
   );
-});
- */
+}

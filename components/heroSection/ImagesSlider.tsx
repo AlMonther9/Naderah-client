@@ -1,6 +1,6 @@
 import React, { useMemo, useCallback } from 'react';
 import Image from 'next/image';
-import { cn } from '@/components/auth/lib/utils';
+import { cn } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
 
 // Separate interface for better type management
