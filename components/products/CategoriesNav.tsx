@@ -15,15 +15,15 @@ export function CategoriesNav({
   onCategoryChange,
 }: CategoriesNavProps) {
   return (
-    <div className="mb-8 border-b border-gray-300">
-      <Tabs className="bg-transparent" value={activeCategory}>
-        <TabsList className="bg-transparent flex">
+    <div className="mb-8 border-b border-gray-300 overflow-ellipsis">
+      <Tabs value={activeCategory}>
+        <TabsList className="bg-transparent flex space-x-4 whitespace-nowrap">
           {categories.map((category) => (
             <TabsTrigger
               key={category.id}
               value={category.id}
               onClick={() => onCategoryChange(category.id)}
-              className="border-0 text-base font-medium data-[state=active]:border-b-2 data-[state=active]:border-primary"
+              className="bg-transparent border-0 px-0 py-2 text-base font-medium flex-shrink-0 data-[state=active]:border-b-2 data-[state=active]:border-primary"
             >
               {category.label}
             </TabsTrigger>

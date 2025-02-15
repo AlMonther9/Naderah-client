@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import { FeaturedProduct } from "@/app/types/product";
 import { Button } from "@/components/ui/button";
 import { Filter } from "lucide-react";
 import {
@@ -52,7 +51,7 @@ const filters = [
 ];
 
 // Mock products with a category field for filtering
-const mockProducts: FeaturedProduct[] = [
+const mockProducts = [
   {
     id: 1,
     name: "زيت الشعر الطبيعي",
@@ -144,7 +143,8 @@ export default function ProductsPage() {
   const currentHero = heroMapping[activeCategory] || heroMapping["all"];
 
   return (
-    <div className="w-full">
+    // Set RTL direction for the entire page
+    <div className="w-full" dir="rtl">
       {/* Top Hero Section */}
       <CategoryHero
         title={currentHero.title}
@@ -154,7 +154,7 @@ export default function ProductsPage() {
 
       <div className="container mx-auto px-4 py-8 space-y-8">
         <div className="flex flex-col gap-8 md:flex-row">
-          <main className="flex-1 space-y-8">
+          <main className="flex-1 space-y-8 order-2 md:order-1">
             {/* Mobile Filter Button */}
             <div className="md:hidden">
               <Sheet>
@@ -164,12 +164,11 @@ export default function ProductsPage() {
                     تصفية المنتجات
                   </Button>
                 </SheetTrigger>
-                {/* For RTL, you may adjust the side if needed */}
                 <SheetContent side="right" className="w-[300px]">
                   <SheetHeader>
                     <SheetTitle>التصفية</SheetTitle>
                   </SheetHeader>
-                  <div className="mt-4">
+                  <div className="mt-4 space-y-4">
                     {filters.map((filter) => (
                       <Accordion key={filter.id} type="single" collapsible>
                         <AccordionItem value={filter.id}>
@@ -212,7 +211,7 @@ export default function ProductsPage() {
             <ProductsGrid products={filteredProducts} />
           </main>
           {/* Desktop Filters Sidebar */}
-          <aside className="hidden md:block w-32 space-y-6 mt-28">
+          <aside className="hidden md:block w-32 space-y-6 order-1 md:order-2 mt-28">
             {filters.map((filter) => (
               <Accordion key={filter.id} type="single" collapsible>
                 <AccordionItem value={filter.id}>
