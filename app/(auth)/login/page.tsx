@@ -7,7 +7,7 @@ import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { LoginForm } from "../../../components/auth/LoginForm";
 import { useLanguage } from "@/context/language-context";
-import SocialLoginButton from "@/components/SocialLoginButton";
+import SocialLoginButton from "@/components/auth/SocialLoginButton";
 import { Icons } from "@/components/icons";
 
 export default function LoginPage() {

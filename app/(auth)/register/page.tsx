@@ -6,7 +6,7 @@ import { useLanguage } from "@/context/language-context";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { useSession } from "next-auth/react";
-import SocialLoginButton from "@/components/SocialLoginButton";
+import SocialLoginButton from "@/components/auth/SocialLoginButton";
 import { Icons } from "@/components/icons";
 import Link from "next/link";
 

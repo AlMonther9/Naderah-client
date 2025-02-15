@@ -1,9 +1,9 @@
 
 import { LanguageProvider } from '@/context/language-context'
-import HeroSection from '@/components/heroSection/HeroSection'
-import { CategoriesSection } from '@/components/CategoriesSection'
-import FeaturedProducts from '@/components/FeaturedProducts'
-import WhyChooseUs from '@/components/WhyChooseUs'
+import HeroSection from '@/components/home/heroSection/HeroSection'
+import { CategoriesSection } from '@/components/home/CategoriesSection'
+import FeaturedProducts from '@/components/home/FeaturedProducts'
+import WhyChooseUs from '@/components/home/WhyChooseUs'
 import { CustomerReviews } from '@/components/CustomerReviews'
 
 export default function Home() {

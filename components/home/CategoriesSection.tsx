@@ -2,11 +2,11 @@ import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
 
 const categories = [
-  { name: "الشعر", image: "/assets/images/hero/hero-1.png" },
-  { name: "الجسم", image: "/placeholder.svg?height=200&width=200" },
-  { name: "ركن الطيب", image: "/placeholder.svg?height=200&width=200" },
-  { name: "حزم الجمال", image: "/placeholder.svg?height=200&width=200" },
-  { name: "البشرة", image: "/placeholder.svg?height=200&width=200" },
+  { name: "الشعر", image: "/hair.png" },
+  { name: "الجسم", image: "/body.png" },
+  { name: "ركن الطيب", image: "/scent.png" },
+  { name: "حزم الجمال", image: "/packages.png" },
+  { name: "البشرة", image: "/skin.png" },
 ];
 
 export function CategoriesSection() {

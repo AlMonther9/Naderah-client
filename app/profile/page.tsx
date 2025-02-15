@@ -4,7 +4,7 @@
 import React, { useEffect, useState } from "react";
 import { useSession, signOut } from "next-auth/react";
 import { Skeleton } from "@/components/ui/skeleton";
-import { ProfileForm, ProfileData } from "@/components/ProfileForm";
+import { ProfileForm, ProfileData } from "@/components/auth/ProfileForm";
 
 const ProfilePage = () => {
   const { data: session, status } = useSession();
