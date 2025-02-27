@@ -7,26 +7,35 @@ import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 
 const reviews = [
   {
-    text: "استخدمت منتجات العناية بالبشرة من هذا الموقع ولاحظت فرقًا كبيرًا في بشرتي خلال أسابيع قليلة. العبوّة أيضًا أنيقة جدًا وسهلة الاستخدام. شكرًا لكم!",
-    author: "مريم احمد",
+    text: "استخدمت منتجات العناية بالبشرة من هذا الموقع ووجدت نتائج مذهلة، بشرتي أصبحت أكثر نعومة وتألقاً.",
+    author: "مريم أحمد",
     rating: 5,
   },
   {
-    text: "استخدمت منتجات العناية بالبشرة من هذا الموقع ولاحظت فرقًا كبيرًا في بشرتي خلال أسابيع قليلة. العبوّة أيضًا أنيقة جدًا وسهلة الاستخدام. شكرًا لكم!",
-    author: "مريم احمد",
+    text: "تجربتي مع هذا الموقع كانت ممتازة، الخدمة سريعة والمنتجات ذات جودة عالية.",
+    author: "فاطمة علي",
+    rating: 4,
+  },
+  {
+    text: "منتجات فعالة وخدمة عملاء رائعة، أنصح بها لكل من يبحث عن العناية بالبشرة.",
+    author: "سارة محمد",
+    rating: 3,
+  },
+  {
+    text: "لاحظت تحسناً ملحوظاً في بشرتي بعد استخدام المنتجات، تجربة مميزة بكل المقاييس.",
+    author: "نورة حسن",
     rating: 5,
   },
   {
-    text: "استخدمت منتجات العناية بالبشرة من هذا الموقع ولاحظت فرقًا كبيرًا في بشرتي خلال أسابيع قليلة. العبوّة أيضًا أنيقة جدًا وسهلة الاستخدام. شكرًا لكم!",
-    author: "مريم احمد",
-    rating: 5,
+    text: "تجربة رائعة من البداية حتى النهاية، جودة المنتج مذهلة وسعر مناسب.",
+    author: "ليلى حسين",
+    rating: 4,
   },
 ];
 
-export function CustomerReviews() {
 
-  const { currentIndex, sliderRef, scrollLeft, scrollRight } =
-    useSlider(reviews);
+export function CustomerReviews() {
+  const { sliderRef, scroll } = useSlider(reviews);
 
   return (
     <div className="container mx-auto px-6 py-8  lg:py-12 text-center">
@@ -76,21 +85,21 @@ export function CustomerReviews() {
         <div className="flex justify-center gap-3 mt-6">
           <Button
             variant="outline"
-            className="w-8 h-8 rounded-md shadow-md border bg-[#FF7894] hover:bg-[#FF5C78] text-white"
-            onClick={scrollRight}
-            disabled={currentIndex === reviews.length - 1}
+            className="w-8 h-8 rounded-md shadow-md border
+      bg-[#FF7894] hover:bg-[#FF5C78] text-white disabled:opacity-50 disabled:cursor-not-allowed"
+            onClick={() => scroll("left")}
           >
             <ChevronRight className="w-5 h-5" />
           </Button>
-
           <Button
             variant="outline"
-            className="w-8 h-8 rounded-md shadow-md border bg-[#FF7894] hover:bg-[#FF5C78] text-white"
-            onClick={scrollLeft}
-            disabled={currentIndex === 0}
+            className="w-8 h-8 rounded-md shadow-md border
+      bg-[#FF7894] hover:bg-[#FF5C78] text-white disabled:opacity-50 disabled:cursor-not-allowed"
+            onClick={() => scroll("right")}
           >
             <ChevronLeft className="w-5 h-5" />
           </Button>
+
         </div>
       </div>
     </div>

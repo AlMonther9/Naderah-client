@@ -50,7 +50,7 @@ export default function FeaturedProducts() {
   }, []);
 
   // Custom hook for slider logic
-  const { currentIndex, sliderRef, scrollLeft, scrollRight } = useSlider(products);
+  const { currentIndex, sliderRef, scroll } = useSlider(products);
 
   const toggleWishlist = (productName: string) => {
     setWishlist((prev) =>
@@ -75,16 +75,14 @@ export default function FeaturedProducts() {
           {/* Navigation Buttons */}
           <button
             className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md z-10"
-            onClick={scrollLeft}
-            disabled={currentIndex === 0}
+            onClick={() => scroll("right")}
           >
             <ChevronLeft size={24} />
           </button>
 
           <button
             className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md z-10"
-            onClick={scrollRight}
-            disabled={currentIndex === products.length - 1}
+            onClick={() => scroll("left")}
           >
             <ChevronRight size={24} />
           </button>
