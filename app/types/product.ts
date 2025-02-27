@@ -1,4 +1,4 @@
-export interface FeaturedProduct {
+export type FeaturedProduct = {
   id: number;
   name: string;
   desc: string;
@@ -8,4 +8,4 @@ export interface FeaturedProduct {
   images: string;
   category_name: string;
   average_rating: number;
-}
+};
