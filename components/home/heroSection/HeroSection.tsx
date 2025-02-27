@@ -20,7 +20,14 @@ interface ButtonProps {
 const HeroSection = () => {
   const [isShoppingHovered, setIsShoppingHovered] = useState(false);
 
-  const images = [process.env.NEXT_PUBLIC_HERO_IMAGE_1 || ""].filter(Boolean);
+  const images = [
+    process.env.NEXT_PUBLIC_HERO_IMAGE_1 || "",
+    process.env.NEXT_PUBLIC_HERO_IMAGE_2 || "",
+    process.env.NEXT_PUBLIC_HERO_IMAGE_3 || "",
+    process.env.NEXT_PUBLIC_HERO_IMAGE_4 || "",
+    process.env.NEXT_PUBLIC_HERO_IMAGE_5 || "",
+    process.env.NEXT_PUBLIC_HERO_IMAGE_6 || ""
+  ].filter(Boolean);
 
   return (
     <div className="w-full flex justify-center py-3 md:py-6 lg:py-6 px-4 md:px-8 lg:px-16">
@@ -73,7 +80,7 @@ const HeroContent = ({
 
 const ShoppingButton = ({ isHovered, setIsHovered }: ButtonProps) => (
   <Link
-    href="/cart"
+    href="/products"
     className="group"
     onMouseEnter={() => setIsHovered(true)}
     onMouseLeave={() => setIsHovered(false)}
