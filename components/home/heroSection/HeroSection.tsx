@@ -21,12 +21,12 @@ const HeroSection = () => {
   const [isShoppingHovered, setIsShoppingHovered] = useState(false);
 
   const images = [
-    process.env.NEXT_PUBLIC_HERO_IMAGE_1 || "",
-    process.env.NEXT_PUBLIC_HERO_IMAGE_2 || "",
-    process.env.NEXT_PUBLIC_HERO_IMAGE_3 || "",
-    process.env.NEXT_PUBLIC_HERO_IMAGE_4 || "",
-    process.env.NEXT_PUBLIC_HERO_IMAGE_5 || "",
-    process.env.NEXT_PUBLIC_HERO_IMAGE_6 || ""
+    "/assets/images/hero/hero-1.png",
+    "/body.png",
+    "/scent.png",
+    "/packages.png",
+    "/skin.png",
+    "/hair.png"
   ].filter(Boolean);
 
   return (
