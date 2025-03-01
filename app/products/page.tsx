@@ -23,12 +23,12 @@ import { ProductsGrid } from "@/components/products/ProductsGrid";
 
 // Define categories for the tabs
 const categories = [
-  { id: "packages", label: "باقات جمالية" },
-  { id: "tea", label: "ركن الطيب" },
+  { id: "all", label: "الكل" },
+  { id: "hair", label: "الشعر" },
   { id: "skin", label: "البشرة" },
   { id: "body", label: "الجسم" },
-  { id: "hair", label: "الشعر" },
-  { id: "all", label: "الكل" },
+  { id: "tea", label: "ركن الطيب" },
+  { id: "packages", label: "باقات جمالية" },
 ];
 
 // Example filters (for now, UI only)
@@ -199,7 +199,6 @@ export default function ProductsPage() {
                 </SheetContent>
               </Sheet>
             </div>
-
             {/* Categories Navigation */}
             <CategoriesNav
               categories={categories}

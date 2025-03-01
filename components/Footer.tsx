@@ -11,7 +11,7 @@ import { FaTelegram, FaTiktok } from "react-icons/fa";
 
 export function Footer() {
   return (
-    <footer className="bg-pri-50">
+    <footer className="bg-pri-50 pb-4">
       {/* Request More Information Section */}
       <div className="bg-pri-beige flex py-8 lg:py-16">
         <div className="container mx-auto px-4 text-center">
@@ -47,17 +47,17 @@ export function Footer() {
 
             <div className="flex justify-center gap-4">
               {/* Social Media Icons */}
-              <Link href="#" className="text-gray-400 hover:text-pri-blue">
-                <Linkedin className="h-5 w-5" />
+              <Link href="#" className="text-gray-400 hover:text-sec-300">
+                <FaTiktok className="h-5 w-5" />
               </Link>
-              <Link href="#" className="text-gray-400 hover:text-pri-blue">
+              <Link href="https://www.facebook.com/NaderaSkinCare" className="text-gray-400 hover:text-sec-300">
                 <Facebook className="h-5 w-5" />
               </Link>
-              <Link href="#" className="text-gray-400 hover:text-pri-blue">
+              <Link href="https://www.instagram.com/nadera_egypt?fbclid=IwY2xjawItk6RleHRuA2FlbQIxMAABHXEgzrtH0l3HvButXMdyqGvMSEZooo9Qvq8JmtoFH_qbLbjLaiGwlHhJaA_aem_aIBP6P0HCHGoYjuzC8p40Q" className="text-gray-400 hover:text-sec-300">
                 <Instagram className="h-5 w-5" />
               </Link>
-              <Link href="#" className="text-gray-400 hover:text-pri-blue">
-                <Youtube className="h-5 w-5" />
+              <Link href="#" className="text-gray-400 hover:text-sec-300">
+                <FaTelegram className="h-5 w-5" />
               </Link>
             </div>
 
