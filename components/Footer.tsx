@@ -15,9 +15,9 @@ export function Footer() {
       {/* Request More Information Section */}
       <div className="bg-pri-beige flex py-8 lg:py-16">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-2xl lg:text-3xl font-bold mb-4 lg:mb-6 text-pri-blue">
+          {/* <h2 className="text-2xl lg:text-3xl font-bold mb-4 lg:mb-6 text-pri-blue">
             Request More Information
-          </h2>
+          </h2> */}
           <p className="text-gray-600 text-center mb-6 lg:mb-8 max-w-2xl mx-auto text-sm lg:text-base">
             منتجاتنا مرخصة من وزارة الصحة ومصنعة في مصانع مرخصة من جمعية
             الإمارات للغوص وحاصلة على شهادة الجودة تحت إشراف كامل من الأطباء
