@@ -11,7 +11,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        almarai: ["Almarai", "sans-serif"], // Define "Almarai" as a custom font
+        cairo: ["Cairo", "sans-serif"],
+        tajwal: ["Tajawal", "sans-serif"],
       },
       colors: {
         background: "hsl(var(--background))",

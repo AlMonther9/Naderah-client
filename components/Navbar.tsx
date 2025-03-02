@@ -26,8 +26,8 @@ export function Navbar() {
   const activeClass = (path: string) => {
     const isActive = pathname === path;
 
-    return `relative rounded font-bold transition-all duration-300
-      ${isActive ? "text-sec-900" : ""}
+    return `relative rounded font-tajwal font-medium transition-all duration-300
+      ${isActive ? "text-sec-900" : "text-[#171924BA]"}
       before:absolute before:bottom-[-6px] before:left-1/2 before:-translate-x-1/2
       before:w-0 before:h-[2px] before:bg-sec-900 before:transition-all before:duration-300
       ${isActive ? "before:w-3/5" : "hover:before:w-3/5"}`;
@@ -81,7 +81,7 @@ export function Navbar() {
                 <Link
                   key={path}
                   href={path}
-                  className={`px-3 py-1 font-serif text-md transition-colors ${activeClass(
+                  className={`px-3 py-1 text-base transition-colors ${activeClass(
                     path
                   )}`}
                 >
@@ -221,7 +221,7 @@ export function Navbar() {
             <Link
               key={path}
               href={path}
-              className={`px-2 py-1 font-serif text-sm transition-colors ${activeClass(
+              className={`px-2 py-1 text-sm transition-colors ${activeClass(
                 path
               )}`}
             >

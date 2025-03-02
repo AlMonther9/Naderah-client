@@ -66,9 +66,8 @@ const HeroContent = ({
       مساحة اعلانية
     </motion.p>
 
-    <motion.p className="mt-4 mb-4 text-center text-xl font-sans max-w-3xl px-3 text-white">
-      جميع منتجاتنا مستخلصة من الطبيعة لضمان أعلى جودة وأمان.جميع منتجاتنا
-      مستخلصة من الطبيعة لضمان أعلى جودة وأمان.
+    <motion.p className="mt-4 mb-4 text-center text-xl max-w-3xl px-3 text-white">
+      جميع منتجاتنا مستخلصة من الطبيعة لضمان أعلى جودة وأمان.
     </motion.p>
 
     <ShoppingButton
